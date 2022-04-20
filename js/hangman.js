@@ -105,7 +105,7 @@ const finish = function (success) {
 };
 const timer = function () {
   const timer = document.querySelector("#timer");
-  let time = new Date(20000);
+  let time = new Date(60000);
   const options = {
     minute: "2-digit",
     second: "2-digit",
