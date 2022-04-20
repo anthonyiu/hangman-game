@@ -187,6 +187,11 @@ h1 {
     font-size: 1.2rem;
   }
 
+  #timer {
+    position: relative;
+    grid-area: timer;
+  }
+
   h1 {
     font-size: 1.4rem;
   }
@@ -200,6 +205,7 @@ h1 {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "title title"
+      "timer timer"
       "board board"
       "img img"
       "alph alph";
