@@ -85,30 +85,25 @@ const checkForLetter = function (e) {
     }
     if (fail == 6) {
       finish(false);
+      passwordDiv.classList.add("lost");
     }
     if (password.toUpperCase() === passwordDashed.join("")) {
       finish(true);
+      passwordDiv.classList.add("won");
     }
   }
 };
 alphabet.addEventListener("click", checkForLetter);
 const deactivateLetter = function (hit, letter, audio) {
-  letter.style.border = hit
-    ? "1px solid rgb(50, 177, 149)"
-    : "1px solid rgba(255, 0, 0, 0.338)";
-  letter.style.backgroundColor = hit
-    ? "rgb(50, 177, 149)"
-    : "rgba(255, 0, 0, 0.338)";
-  letter.style.color = "white";
-  letter.style.cursor = "default";
+  letter.className = hit ? "letter hit" : "letter not-hit";
 };
 const finish = function (success) {
   if (success) {
-    alphabet.innerHTML = `<h1><i class="fa-solid fa-face-laugh-wink"></i><br>NICE WORK!</h1><div class='btn'><i class="fa-solid fa-arrow-rotate-right"></i> PLAY AGAIN</div>`;
+    alphabet.innerHTML = `<h1 class="won"><i class="fa-solid fa-face-laugh-wink"></i><br>NICE WORK!</h1><div class='btn'><i class="fa-solid fa-arrow-rotate-right"></i> PLAY AGAIN</div>`;
     // win.play();
     clearInterval(countDown);
   } else {
-    alphabet.innerHTML = `<h1><i class="fa-solid fa-face-dizzy"></i><br>YOU LOST!</h1>
+    alphabet.innerHTML = `<h1 class="lost"><i class="fa-solid fa-face-dizzy"></i><br>YOU LOST!</h1>
     <div class="answer">The answer is: <br><span class="password">${password}</span></div><div class='btn'><i class="fa-solid fa-arrow-rotate-right"></i> TRY AGAIN</div>`;
     // lose.play();
     clearInterval(countDown);
