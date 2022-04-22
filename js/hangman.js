@@ -17,6 +17,12 @@ const passwordBoard = [
   "Plate",
   "Pigeon",
   "Snake",
+  "Bird",
+  "Pig",
+  "Oven",
+  "Milk",
+  "Orange",
+  "Purple",
 ];
 const passwordDiv = document.querySelector("#board");
 const imgDiv = document.querySelector("#hangin-dude");
@@ -48,7 +54,15 @@ const showPassword = function () {
 };
 const showHangman = function (nr) {
   imgDiv.innerHTML = `<img src="img/${nr}.png" alt="" />`;
+  if (nr) {
+    imgDiv.classList.add("shake");
+  }
+  window.setTimeout(function () {
+    imgDiv.classList.remove("shake");
+  }, 300);
+  // const stopshake = function () {};
 };
+
 const checkForLetter = function (e) {
   if (e.target.classList.contains("letter")) {
     if (password.toUpperCase().split("").includes(e.target.textContent)) {
@@ -105,7 +119,7 @@ const finish = function (success) {
 };
 const timer = function () {
   const timer = document.querySelector("#timer");
-  let time = new Date(60000);
+  let time = new Date(300000);
   const options = {
     minute: "2-digit",
     second: "2-digit",

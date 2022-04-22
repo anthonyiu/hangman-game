@@ -10,9 +10,11 @@ Here is a list of changes I made to the original work:
 - Changed the colours
 - Revealed the word when losing the game
 - Disabled the audio files
-- Changed the time limit to 60 secs
+- Changed the time limit to 5 mins
 - Added icons using FontAwesome
 - Drew my version of Hangman
 - Modified the CSS for better responsive design
+- Added Shaking Effect when making a wrong guess
+- Added Timer icon
 
 Feel free to share your thoughts!
