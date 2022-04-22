@@ -118,7 +118,7 @@ const deactivateLetter = function (hit, letter, audio) {
 };
 const finish = function (success) {
   if (success) {
-    alphabet.innerHTML = `<h1 class="won"><i class="fa-solid fa-face-laugh-wink"></i><br>NICE WORK!</h1><div class='btn'><i class="fa-solid fa-arrow-rotate-right"></i> PLAY AGAIN</div>`;
+    alphabet.innerHTML = `<h1 class="won"><i class="fa-solid fa-face-laugh-wink"></i><br>WELL DONE!</h1><div class='btn'><i class="fa-solid fa-arrow-rotate-right"></i> PLAY AGAIN</div>`;
     // win.play();
     clearInterval(countDown);
   } else {
