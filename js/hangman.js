@@ -23,6 +23,25 @@ const passwordBoard = [
   "Milk",
   "Orange",
   "Purple",
+  "Rabbit",
+  "Moon",
+  "Sun",
+  "Father",
+  "Mother",
+  "Door",
+  "Window",
+  "Bread",
+  "Shoes",
+  "Mouth",
+  "Mouse",
+  "King",
+  "Flower",
+  "Planet",
+  "Arrow",
+  "Money",
+  "Summer",
+  "Winter",
+  "Spring",
 ];
 const passwordDiv = document.querySelector("#board");
 const imgDiv = document.querySelector("#hangin-dude");
@@ -123,7 +142,7 @@ const timer = function () {
     time -= 1000;
     timer.textContent = Intl.DateTimeFormat("en-US", options).format(time);
     if (time == 10000) {
-      timer.style.color = "#FF0000";
+      timer.classList.add("timeout");
     }
     if (time == 0) {
       finish(false);
