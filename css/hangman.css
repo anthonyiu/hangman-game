@@ -1,6 +1,13 @@
+:root {
+  --yellow: #dbd600;
+  --green: #32b195;
+  --blue: #0058a8;
+  --red: #d58282;
+}
+
 body {
   background-color: #333333;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   /* height: 100vh; */
   display: flex;
@@ -40,18 +47,28 @@ body {
 
 #board {
   font-size: 2rem;
-  color: #ffffff;
+  color: #222222;
   grid-area: board;
   letter-spacing: 0.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 5px solid #ffffff;
-  background-color: none;
+  /* border: 5px solid #ffffff; */
+  background-color: #ffffff;
   text-transform: uppercase;
   text-align: center;
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: 5rem;
+}
+
+#board.won {
+  background-color: var(--green);
+  color: #ffffff;
+}
+
+#board.lost {
+  background-color: var(--red);
+  color: #ffffff;
 }
 
 #hangin-dude {
@@ -59,9 +76,9 @@ body {
   align-items: center;
   justify-content: center;
   grid-area: img;
-  background-color: lightcoral;
+  background-color: var(--yellow);
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: 3rem;
   /* min-height: 350px; */
 }
 
@@ -97,13 +114,13 @@ h1 {
   top: 0;
   right: 0;
   font-size: 1.5rem;
-  background-color: #f0b880;
+  background-color: var(--yellow);
   text-align: center;
   /* display: flex;
   align-items: center;
   justify-content: center; */
-  padding: 5px 10px;
-  border-radius: 1rem;
+  padding: 10px 20px;
+  border-radius: 5rem;
 }
 
 #timer::before {
@@ -130,10 +147,30 @@ h1 {
   font-size: 2rem;
 }
 
-.letter:hover {
-  border: 2px solid rgb(7, 145, 155);
-  color: rgb(7, 145, 155);
+.letter:not(.hit):not(.not-hit):hover {
+  border: 2px solid var(--green);
+  color: var(--green);
   box-shadow: 0px 0px 12px 0px #999999;
+}
+
+.hit {
+  border: 1px solid var(--green);
+  background-color: var(--green);
+  cursor: default;
+}
+
+.not-hit {
+  background-color: var(--red);
+  border: 1px solid var(--red);
+  cursor: default;
+}
+
+h1.won {
+  color: var(--green);
+}
+
+h1.lost {
+  color: var(--red);
 }
 
 .answer {
@@ -161,7 +198,7 @@ h1 {
   background-color: #eeeeee;
 }
 
-.play {
+/* .play {
   color: #008800;
 }
 
@@ -169,7 +206,7 @@ h1 {
   cursor: pointer;
   font-size: 40px;
   transition: all 0.2s ease-in-out;
-}
+} */
 
 /* Shaking Animation */
 
